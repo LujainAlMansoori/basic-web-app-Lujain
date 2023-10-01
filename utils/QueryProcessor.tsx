@@ -6,6 +6,13 @@ export default function QueryProcessor(query: string): string {
       "writer in the English language and the world's pre-eminent dramatist."
     );
   }
+  //added 
+  if (query.toLowerCase().includes("andrew")) {
+    return (
+    "lmansoor"
+    );
+  }
+
 
   return "";
 }
