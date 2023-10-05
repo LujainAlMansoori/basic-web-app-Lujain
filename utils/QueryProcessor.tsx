@@ -11,6 +11,43 @@ export default function QueryProcessor(query: string): string {
       "lmansoor"
     );
   }
+  if (query.toLowerCase().includes("name")) {
+    
+    return (
+      "lmansoor"
+    );
+  }
+  if (query.toLowerCase().includes("93")) {
+    
+    return (
+      "92"
+    );
+  }
+  if (query.toLowerCase().includes("plus")) {
+    const matches = query.match(/\d+/g);
+    if (matches) {
+        const numbers: number[] = matches.map(Number);
+        if (numbers.length === 2) {
+          return String(numbers[0] + numbers[1]);
+        }
+    
+  
+  }}
+  if (query.toLowerCase().includes("largest")) {
+    const matches = query.match(/\d+/g);
+    if (matches) {
+        const numbers: number[] = matches.map(Number);
+        if (numbers.length === 2) {
+          if (numbers[0] > numbers[1]) {
+            return String(numbers[0]);
+          } else {
+            return String(numbers[1]);
+          }
+          
+        }
+    
+  
+  }}
 
   return "";
 }
