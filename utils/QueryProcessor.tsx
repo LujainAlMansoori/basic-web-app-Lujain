@@ -33,7 +33,7 @@ export default function QueryProcessor(query: string): string {
     const cbrtN = Math.cbrt(n);
     return Number.isInteger(sqrtN) && Number.isInteger(cbrtN);
 };
-  if (query.toLowerCase().includes("largest")) {
+  if (query.toLowerCase().includes("square")) {
     const matches = query.match(/\d+/g);
     if (matches) {
         const numbers: number[] = matches.map(Number);
