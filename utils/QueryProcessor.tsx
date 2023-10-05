@@ -37,12 +37,8 @@ export default function QueryProcessor(query: string): string {
     const matches = query.match(/\d+/g);
     if (matches) {
         const numbers: number[] = matches.map(Number);
-        if (numbers.length === 2) {
-          if (numbers[0] > numbers[1]) {
-            return String(numbers[0]);
-          } else {
-            return String(numbers[1]);
-          }
+        if (numbers.length === 4) {
+          return String(Math.max(...numbers));
           
         }
     
