@@ -45,6 +45,15 @@ export default function QueryProcessor(query: string): string {
     
   
   }}
-
+  if (query.toLowerCase().includes("multiplied")) {
+    const matches = query.match(/\d+/g);
+    if (matches) {
+        const numbers: number[] = matches.map(Number);
+        if (numbers.length === 2) {
+          return String(numbers[0] * numbers[1]);
+        }
+    
+  
+  }}
   return "";
 }
