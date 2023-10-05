@@ -28,12 +28,18 @@ export default function QueryProcessor(query: string): string {
     
   
   }}
+  const isSquareAndCube = (n: number): boolean => {
+    const sqrtN = Math.sqrt(n);
+    const cbrtN = Math.cbrt(n);
+    return Number.isInteger(sqrtN) && Number.isInteger(cbrtN);
+};
   if (query.toLowerCase().includes("largest")) {
     const matches = query.match(/\d+/g);
     if (matches) {
         const numbers: number[] = matches.map(Number);
         if (numbers.length === 3) {
-          return String(Math.max(...numbers));
+          const results: number[] = numbers.filter(isSquareAndCube);
+          return String(results);
           
         }
     
