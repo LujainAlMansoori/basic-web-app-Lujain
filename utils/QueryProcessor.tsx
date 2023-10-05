@@ -33,18 +33,16 @@ export default function QueryProcessor(query: string): string {
     const cbrtN = Math.cbrt(n);
     return Number.isInteger(sqrtN) && Number.isInteger(cbrtN);
 };
-  if (query.toLowerCase().includes("square")) {
-    const matches = query.match(/\d+/g);
-    if (matches) {
-        const numbers: number[] = matches.map(Number);
-        if (numbers.length === 3) {
-          const results: number[] = numbers.filter(isSquareAndCube);
-          return String(results);
-          
+if (query.toLowerCase().includes("square")) {
+        const matches = query.match(/\d+/g);
+        if (matches) {
+            const numbers: number[] = matches.map(Number);
+            const result: number | undefined = numbers.find(isSquareAndCube);
+            return  String(result);
         }
-    
+    }
   
-  }}
+
   if (query.toLowerCase().includes("multiplied")) {
     const matches = query.match(/\d+/g);
     if (matches) {
