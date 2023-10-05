@@ -17,12 +17,7 @@ export default function QueryProcessor(query: string): string {
       "lmansoor"
     );
   }
-  if (query.toLowerCase().includes("93")) {
-    
-    return (
-      "92"
-    );
-  }
+
   if (query.toLowerCase().includes("plus")) {
     const matches = query.match(/\d+/g);
     if (matches) {
@@ -37,7 +32,7 @@ export default function QueryProcessor(query: string): string {
     const matches = query.match(/\d+/g);
     if (matches) {
         const numbers: number[] = matches.map(Number);
-        if (numbers.length === 4) {
+        if (numbers.length === 3) {
           return String(Math.max(...numbers));
           
         }
